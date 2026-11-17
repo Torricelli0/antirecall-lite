@@ -1,0 +1,21 @@
+{
+  "manifest_version": 4,
+  "type": "extension",
+  "name": "AntiRecall Lite",
+  "slug": "anti_recall_lite",
+  "description": "把被撤回的消息留在原地并标出：图片、文件、文字都保留。只注入必要部分，不联网、不上传数据。",
+  "version": "1.3.2",
+  "authors": [
+    {
+      "name": "local"
+    }
+  ],
+  "platform": [
+    "darwin",
+    "win32",
+    "linux"
+  ],
+  "injects": {
+    "main": "./main.js"
+  }
+}

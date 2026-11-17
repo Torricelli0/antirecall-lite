@@ -1,0 +1,10 @@
+# 本地运行产物 / 隐私数据，绝不提交
+recalled.jsonl
+recalled.jsonl.old
+debug.log
+config.json
+查看地址.txt
+assets/
+*.log
+.DS_Store
+node_modules/

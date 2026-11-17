@@ -1,0 +1,220 @@
+/* ==========================================================================
+   Design Tokens — 抽取自 DeepSeek 官网公开 CSS（www.deepseek.com）
+   --------------------------------------------------------------------------
+   这不是"猜的配色"，是从官方样式表里读出来的真实变量值。
+   明暗两套都保留，方便跟随系统 / 手动切换。
+
+   用法：在任何页面 <link> 引入本文件，然后用 var(--ds-*)。
+   改风格时只改这里，不要散落在各组件里写死颜色。
+   ========================================================================== */
+
+:root {
+  /* ── 品牌色 ───────────────────────────────────────────── */
+  --ds-color-brand:              #4d6bfe;
+  --ds-color-brand-light:        #6799fe;
+  --ds-color-brand-deep:         #3a65c2;
+  --ds-color-brand-medium-rev:   #4176e6;
+  --ds-color-link-blue:          #234792;
+  --ds-color-hero-join:          #2e609f;
+  --ds-color-primary-bluish:     #152443;
+
+  /* ── 间距：4px 基准网格 ────────────────────────────────── */
+  --ds-space-1:   4px;
+  --ds-space-2:   8px;
+  --ds-space-3:  12px;
+  --ds-space-4:  16px;
+  --ds-space-5:  24px;
+  --ds-space-6:  32px;
+  --ds-space-7:  40px;
+  --ds-space-8:  56px;
+  --ds-space-9:  80px;
+  --ds-space-10: 120px;
+  --ds-space-11: 160px;
+  --ds-space-12: 200px;
+  --ds-space-13: 240px;
+
+  /* ── 圆角 ─────────────────────────────────────────────── */
+  --ds-radius-sm:     8px;
+  --ds-radius-input: 10px;
+  --ds-radius-media: 12px;
+  --ds-radius-panel: 16px;
+  --ds-radius-card:  24px;
+  --ds-radius-pill: 100px;
+
+  /* ── 字体 ─────────────────────────────────────────────── */
+  --ds-font-display: "Host Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ds-font-body:    "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+  --ds-font-sans:    var(--ds-font-body);
+  --ds-font-mono:    "Fragment Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* ── 动效 ─────────────────────────────────────────────── */
+  --ds-ease:         cubic-bezier(.4, 0, .2, 1);
+  --ds-duration-fast: 150ms;
+  --ds-duration:      240ms;
+  --ds-blur-glass:    12px;
+
+  /* ── 亮色主题（默认）──────────────────────────────────── */
+  --ds-bg-page:            #f7f8fa;          /* 页面底色：微冷灰，让白卡片浮起来 */
+  --ds-bg-page-alt:        #f9f8f8;
+  --ds-bg-surface-1:       #ffffff;          /* 卡片：纯白，不是半透明 */
+  --ds-bg-surface-2:       #f4f6f9;          /* 内层/chip 底 */
+  --ds-bg-surface-raised:  #ffffff;
+  --ds-bg-hover:           rgba(0, 0, 0, .035);
+  --ds-bg-input:           #ffffff;
+  --ds-bg-code:            rgba(0, 0, 0, .045);
+  --ds-bg-overlay:         #ffffff;
+  --ds-bg-card-edge:       #e9edf3;          /* 卡片描边：官网 shadow 的第一层 */
+
+  --ds-text-primary:       #1e232c;
+  --ds-text-secondary:     rgba(32, 33, 36, .82);
+  --ds-text-description:   rgba(32, 33, 36, .62);
+  --ds-text-placeholder:   #8691a1;
+  --ds-text-inverse:       #ffffff;
+
+  --ds-border-subtle:      #e9edf3;
+  --ds-border-default:     rgba(32, 33, 36, .16);
+  --ds-border-divider:     rgba(32, 33, 36, .09);
+  --ds-border-hover:       rgba(32, 33, 36, .28);
+  --ds-border-strong:      rgba(0, 0, 0, .22);
+
+  --ds-shadow-card:        0 0 0 1px #eef1f6, 0 2px 4px rgba(16,24,40,.04), 0 12px 24px rgba(16,24,40,.05);
+  --ds-shadow-raised:      0 4px 12px rgba(16,24,40,.07), 0 20px 48px rgba(16,24,40,.09);
+
+  --ds-btn-primary-bg:     #1a1615;
+  --ds-btn-primary-text:   #ffffff;
+  --ds-btn-ghost-text:     #121c31;
+  --ds-btn-ghost-hover-bg: rgba(0, 0, 0, .04);
+
+  /* 语义色：本项目的"已撤回"状态 */
+  --ds-accent-warn:        #c2762a;
+  --ds-accent-warn-bg:     rgba(194, 118, 42, .10);
+  --ds-accent-warn-border: rgba(194, 118, 42, .28);
+}
+
+/* ── 深色主题 ───────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ds-bg-page:            #0a0a0a;
+    --ds-bg-page-alt:        #111111;
+    --ds-bg-surface-1:       hsla(0, 0%, 100%, .06);
+    --ds-bg-surface-2:       hsla(0, 0%, 100%, .04);
+    --ds-bg-surface-raised:  hsla(0, 0%, 100%, .25);
+    --ds-bg-hover:           hsla(0, 0%, 100%, .06);
+    --ds-bg-input:           hsla(0, 0%, 100%, .08);
+    --ds-bg-code:            rgba(0, 0, 0, .35);
+    --ds-bg-overlay:         #262626;
+
+    --ds-text-primary:       #ffffff;
+    --ds-text-secondary:     hsla(0, 0%, 100%, .8);
+    --ds-text-description:   hsla(0, 0%, 100%, .56);
+    --ds-text-placeholder:   hsla(0, 0%, 100%, .3);
+    --ds-text-inverse:       #0a0a0a;
+
+    --ds-border-subtle:      hsla(0, 0%, 100%, .08);
+    --ds-border-default:     hsla(0, 0%, 100%, .10);
+    --ds-border-divider:     hsla(0, 0%, 100%, .25);
+    --ds-border-hover:       hsla(20, 1%, 45%, .2);
+    --ds-border-strong:      hsla(0, 0%, 100%, .24);
+
+    --ds-shadow-card:        hsla(0, 0%, 100%, .12) 0 1px 0 0 inset;
+    --ds-shadow-raised:      0 12px 40px rgba(0,0,0,.5);
+
+    --ds-btn-primary-bg:     #ffffff;
+    --ds-btn-primary-text:   #0a0a0a;
+    --ds-btn-ghost-text:     #ffffff;
+    --ds-btn-ghost-hover-bg: hsla(0, 0%, 100%, .08);
+
+    --ds-color-brand:        #6799fe;
+    --ds-accent-warn:        #e8a45a;
+    --ds-accent-warn-bg:     rgba(232, 164, 90, .13);
+    --ds-accent-warn-border: rgba(232, 164, 90, .32);
+  }
+}
+
+/* ── 手动强制亮色 ─────────────────────────────────────── */
+:root[data-theme="light"] {
+  --ds-bg-page:            #f7f8fa;
+  --ds-bg-page-alt:        #f9f8f8;
+  --ds-bg-surface-1:       #ffffff;
+  --ds-bg-surface-2:       #f4f6f9;
+  --ds-bg-surface-raised:  #ffffff;
+  --ds-bg-hover:           rgba(0,0,0,.035);
+  --ds-bg-input:           #ffffff;
+  --ds-bg-code:            rgba(0,0,0,.045);
+  --ds-bg-overlay:         #ffffff;
+  --ds-bg-card-edge:       #e9edf3;
+
+  --ds-text-primary:       #1e232c;
+  --ds-text-secondary:     rgba(32,33,36,.82);
+  --ds-text-description:   rgba(32,33,36,.62);
+  --ds-text-placeholder:   #8691a1;
+  --ds-text-inverse:       #ffffff;
+
+  --ds-border-subtle:      #e9edf3;
+  --ds-border-default:     rgba(32,33,36,.16);
+  --ds-border-divider:     rgba(32,33,36,.09);
+  --ds-border-hover:       rgba(32,33,36,.28);
+  --ds-border-strong:      rgba(0,0,0,.22);
+
+  --ds-shadow-card:        0 0 0 1px #eef1f6, 0 2px 4px rgba(16,24,40,.04), 0 12px 24px rgba(16,24,40,.05);
+  --ds-shadow-raised:      0 4px 12px rgba(16,24,40,.07), 0 20px 48px rgba(16,24,40,.09);
+
+  --ds-btn-primary-bg:     #1a1615;
+  --ds-btn-primary-text:   #ffffff;
+  --ds-btn-ghost-text:     #121c31;
+  --ds-btn-ghost-hover-bg: rgba(0,0,0,.04);
+
+  --ds-color-brand:        #4d6bfe;
+  --ds-accent-warn:        #c2762a;
+  --ds-accent-warn-bg:     rgba(194,118,42,.10);
+  --ds-accent-warn-border: rgba(194,118,42,.28);
+}
+
+/* ── 手动强制深色（和 @media 里那份一致，这样按钮切换才生效）─── */
+:root[data-theme="dark"] {
+  --ds-bg-page:            #0a0a0a;
+  --ds-bg-page-alt:        #111111;
+  --ds-bg-surface-1:       hsla(0,0%,100%,.06);
+  --ds-bg-surface-2:       hsla(0,0%,100%,.04);
+  --ds-bg-surface-raised:  hsla(0,0%,100%,.25);
+  --ds-bg-hover:           hsla(0,0%,100%,.06);
+  --ds-bg-input:           hsla(0,0%,100%,.08);
+  --ds-bg-code:            rgba(0,0,0,.35);
+  --ds-bg-overlay:         #262626;
+  --ds-bg-card-edge:       hsla(0,0%,100%,.09);
+
+  --ds-text-primary:       #ffffff;
+  --ds-text-secondary:     hsla(0,0%,100%,.8);
+  --ds-text-description:   hsla(0,0%,100%,.56);
+  --ds-text-placeholder:   hsla(0,0%,100%,.3);
+  --ds-text-inverse:       #0a0a0a;
+
+  --ds-border-subtle:      hsla(0,0%,100%,.08);
+  --ds-border-default:     hsla(0,0%,100%,.10);
+  --ds-border-divider:     hsla(0,0%,100%,.25);
+  --ds-border-hover:       hsla(20,1%,45%,.2);
+  --ds-border-strong:      hsla(0,0%,100%,.24);
+
+  --ds-shadow-card:        hsla(0,0%,100%,.12) 0 1px 0 0 inset, 0 12px 32px rgba(0,0,0,.34);
+  --ds-shadow-raised:      0 12px 40px rgba(0,0,0,.5);
+
+  --ds-btn-primary-bg:     #ffffff;
+  --ds-btn-primary-text:   #0a0a0a;
+  --ds-btn-ghost-text:     #ffffff;
+  --ds-btn-ghost-hover-bg: hsla(0,0%,100%,.08);
+
+  --ds-color-brand:        #6799fe;
+  --ds-accent-warn:        #e8a45a;
+  --ds-accent-warn-bg:     rgba(232,164,90,.13);
+  --ds-accent-warn-border: rgba(232,164,90,.32);
+}
+
+/* ── 基础重置（可选，按需使用）──────────────────────────── */
+.ds-reset {
+  font-family: var(--ds-font-body);
+  color: var(--ds-text-primary);
+  background: var(--ds-bg-page);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+.ds-transition { transition: all var(--ds-duration) var(--ds-ease); }

@@ -26,6 +26,12 @@
 
 **必须先装 [LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT)** —— QQ 官方没有插件系统，LiteLoader 是让插件能加载进 QQ 的加载器。
 
+> 官方仓库：**https://github.com/LiteLoaderQQNT/LiteLoaderQQNT**（约 7k star）
+> 按它 README 的「安装」章节操作：下载对应系统的安装包运行一次，
+> 它会把 `require('./LiteLoader.js')` 写进 QQ 的 `app_launcher/index.js`。
+> macOS 若提示「已损坏 / 无法打开」，先执行
+> `sudo xattr -rd com.apple.quarantine /Applications/QQ.app` 再重装 LiteLoader。
+
 ```
 QQ 本体
   └ LiteLoaderQQNT（插件加载器）
